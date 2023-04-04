@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  mysql-con:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Mig5@mig5
+  fe-con:
+    image: fe-dr-img:v1
+    ports:
+      - "8081:8081"
+  be-con:
+    image: be-dr-img:v1
+    ports:
+      - "8080:8080"
+    environment:
+      user_name: CodingBeast_Docker_compose
