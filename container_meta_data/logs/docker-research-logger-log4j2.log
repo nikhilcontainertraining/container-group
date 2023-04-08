@@ -1,18 +1,25 @@
-2023-04-08 05:03:58,675 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-4] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
-2023-04-08 05:03:58,689 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-4] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
-2023-04-08 05:03:58,692 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-4] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
-2023-04-08 05:03:58,696 INFO c.n.c.d.s.CardsHandler [http-nio-8080-exec-4] Request to getMovies from internet COMPLETE
-2023-04-08 05:03:58,818 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
-2023-04-08 05:03:58,821 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
-2023-04-08 05:03:58,827 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
-2023-04-08 05:03:58,829 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
-2023-04-08 05:03:58,833 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
-2023-04-08 05:03:58,836 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
-2023-04-08 05:03:58,840 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
-2023-04-08 05:03:58,843 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
-2023-04-08 05:03:58,849 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
-2023-04-08 05:03:58,852 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-6] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
-2023-04-08 05:03:58,858 INFO c.n.c.d.s.CardsHandler [http-nio-8080-exec-6] Request to getMovies from internet COMPLETE
-2023-04-08 05:04:16,233 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-08 05:04:16,236 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-08 05:04:16,242 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-08 19:43:15,363 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-4] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
+2023-04-08 19:43:15,394 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-4] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
+2023-04-08 19:43:15,400 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-4] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
+2023-04-08 19:43:15,402 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-4] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
+2023-04-08 19:43:15,407 INFO c.n.c.d.s.CardsHandler [http-nio-8080-exec-4] Request to getMovies from internet COMPLETE
+2023-04-08 19:43:31,264 INFO c.n.c.d.s.CardsHandler [http-nio-8080-exec-5] Request to getMovies from internet STARTED
+2023-04-08 19:43:31,744 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
+2023-04-08 19:43:31,748 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
+2023-04-08 19:43:31,755 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
+2023-04-08 19:43:31,758 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
+2023-04-08 19:43:31,765 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
+2023-04-08 19:43:31,768 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
+2023-04-08 19:43:31,774 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
+2023-04-08 19:43:31,778 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
+2023-04-08 19:43:31,784 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] select card0_.number as number1_0_0_, card0_.expiration as expirati2_0_0_, card0_.owner as owner3_0_0_, card0_.type as type4_0_0_ from card card0_ where card0_.number=?
+2023-04-08 19:43:31,788 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-5] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
+2023-04-08 19:43:31,793 INFO c.n.c.d.s.CardsHandler [http-nio-8080-exec-5] Request to getMovies from internet COMPLETE
+2023-04-08 19:43:32,633 INFO c.n.c.d.s.FileHandler [http-nio-8080-exec-6] ------------------------------------------------------------
+2023-04-08 19:43:32,635 INFO c.n.c.d.s.FileHandler [http-nio-8080-exec-6] -- file rel path -- joke_vol/1qrkhAmRItI26DiKRSBY.json
+2023-04-08 19:43:32,637 INFO c.n.c.d.s.FileHandler [http-nio-8080-exec-6] -- file abs path -- /be-app/joke_vol/1qrkhAmRItI26DiKRSBY.json
+2023-04-08 19:43:32,648 INFO c.n.c.d.s.FileHandler [http-nio-8080-exec-6] filename: 1qrkhAmRItI26DiKRSBY.json
+2023-04-08 19:43:32,649 INFO c.n.c.d.a.FirstRestApi [http-nio-8080-exec-6] CodingBeast_Docker_compose message log: 1qrkhAmRItI26DiKRSBY
+2023-04-08 19:43:51,910 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-08 19:43:51,918 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-08 19:43:51,929 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

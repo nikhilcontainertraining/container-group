@@ -5,20 +5,47 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Mig5@mig5
     user: root
+
+    # if network is predefined
+#    network_mode: container-group_default
+#
+#    networks:
+#      container-group_default:
+
   fe-con:
+    working_dir: /fe-app
     image: fe-dr-img:v1
+
+    # if network is predefined
+#    network_mode: container-group_default
+#
+#    networks:
+#      container-group_default:
+
     ports:
       - "8081:8081"
     volumes:
-      - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/fe-app
+      - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/fe-app:rw
   be-con:
+    working_dir: /be-app
     image: be-dr-img:v1
+
+    # if network is predefined
+#    network_mode: container-group_default
+#
+#    networks:
+#      container-group_default:
+
     ports:
       - "8080:8080"
     environment:
       user_name: CodingBeast_Docker_compose
     volumes:
-      - ./joke_vol_be:/be-app/joke_vol
-      - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/be-app
+      - joke_vol_be:/be-app/joke_vol
+      - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/be-app:rw
 
-
+# named volumes
+# with this a NEW possibility is that the named volumes could be shared by multiple containers
+# other properties remain same -
+volumes:
+  joke_vol_be:

@@ -27,14 +27,25 @@ docker run --rm \
             -p 8081:8081 \
             --name container-group-fe-con-1 fe-dr-img:v1
 
+--------------------------------------------------------
+
 --------------
 IMPORTANT NOTE
 --------------
 
 - If volumes are created via docker compose then
 - declare each the volume under "volumes" section
-- named volumes need to have relative path hence "./" prefix is required
-- bind mount already has absolute path hence relative path is not required
+
+- named volumes need to be declared under first-level hirarchy
+    - services and volumes at the same hirarchy
+    - the named volumes need to be defined under "volumes" for each service
+    - but to mark it as named volume - the name of the named volumes needs to declared under first-level hirarchy
+    - full path mapping "joke_vol_be:/be-app/joke_vol" is not required at first-level again
+
+- bind mount can also be defined by relative path hence "./" prefix is required
+    ./joke_vol_be:/be-app/joke_vol -- creates a bind mount
+- bind mount generally has absolute path hence relative path is not required
+    /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/be-app
 
 - backup dir
     - since our api is copying the joke/message file into backup dir from "joke_vol" ==> "joke_vol_be"(named vol)
@@ -42,7 +53,16 @@ IMPORTANT NOTE
     - HENCE "backup" dir @ ""/Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data/backup" needs to be created
 
 - Dir/Folders that are automatically created
-    - logs - created by log4j
-    - lib - created by docker based on anonymous volume definition in application "DockerFile"
-    - joke_vol - created by docker based on named volume definition in "docker-compose"
+    - container_group/container_meta_data/logs      - created by log4j
+    - container_group/container_meta_data/lib       - created by docker based on anonymous volume definition in application "DockerFile"
+    - container_group/container_meta_data/joke_vol  - created by docker based on named volume definition in "docker-compose"
 
+    - container_group/joke_vol_be   - bind mounts - created by docker - because of "./" => relative path
+        services:
+            be-con:
+                volumes:
+                    - ./joke_vol_be:/be-app/joke_vol
+
+    - container_group/joke_vol_fe   - bind mounts - created by docker - if ("./joke_vol_fe:/fe-app/joke_vol")
+
+--------------------------------------------------------

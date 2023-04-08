@@ -27,7 +27,7 @@ public class CardsHandler {
     private CardRepository cardRepository;
 
     public List<Card> getCards() {
-        log.info("Request to getMovies from internet STARTED");
+        log.info("Request to getCards from backend STARTED");
 
         Map<String, String> uriVariables = new HashMap<>();
         uriVariables.put("_quantity", "5");
@@ -37,7 +37,7 @@ public class CardsHandler {
             getCardsResponse = restTemplate.getForEntity("https://fakerapi.it/api/v1/credit_cards?_quantity=5",
                     GetCardsResponse.class);
         } catch (RestClientException e) {
-            log.error("ERROR Occurred : Request to getMovies from internet");
+            log.error("ERROR Occurred : Request to getCards from backend");
             log.error(e.getStackTrace());
             throw new RuntimeException("INTERNAL_SERVER_ERROR");
         }
@@ -47,7 +47,7 @@ public class CardsHandler {
 
         cards.forEach(card -> cardRepository.save(card));
 
-        log.info("Request to getMovies from internet COMPLETE");
+        log.info("Request to getCards from backend COMPLETE");
 
         return cards;
     }

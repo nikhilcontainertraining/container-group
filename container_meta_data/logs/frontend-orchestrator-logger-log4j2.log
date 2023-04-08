@@ -1,5 +1,18 @@
-2023-04-08 05:03:58,461 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-1] Request to get cards from downstream/backend STARTED
-2023-04-08 05:03:58,516 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-10] Request to get cards from downstream/backend COMPLETE
-2023-04-08 05:03:58,643 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-3] Request to get cards from downstream/backend STARTED
-2023-04-08 05:03:58,699 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-1] Request to get cards from downstream/backend COMPLETE
-2023-04-08 05:03:58,861 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-3] Request to get cards from downstream/backend COMPLETE
+2023-04-08 19:42:56,178 INFO o.s.b.StartupInfoLogger [main] Starting FrontendOrchestratorApplication using Java 17.0.6 on 2ec770c0cd20 with PID 1 (/fe-app/lib/frontend-orchestrator-0.0.1-SNAPSHOT.jar started by root in /fe-app)
+2023-04-08 19:42:56,196 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-08 19:42:57,227 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2023-04-08 19:42:57,250 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-04-08 19:42:57,253 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-04-08 19:42:57,254 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-04-08 19:42:57,316 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-04-08 19:42:57,318 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1056 ms
+2023-04-08 19:42:57,718 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-04-08 19:42:57,788 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2023-04-08 19:42:57,826 INFO o.s.b.StartupInfoLogger [main] Started FrontendOrchestratorApplication in 2.206 seconds (JVM running for 3.06)
+2023-04-08 19:43:14,423 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-08 19:43:14,425 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-08 19:43:14,427 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 1 ms
+2023-04-08 19:43:14,453 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-1] Request to get cards from downstream/backend STARTED
+2023-04-08 19:43:15,437 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-1] Request to get cards from downstream/backend COMPLETE
+2023-04-08 19:43:31,260 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-2] Request to get cards from downstream/backend STARTED
+2023-04-08 19:43:31,797 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-2] Request to get cards from downstream/backend COMPLETE
