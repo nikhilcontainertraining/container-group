@@ -4,13 +4,21 @@ services:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: Mig5@mig5
+    user: root
   fe-con:
     image: fe-dr-img:v1
     ports:
       - "8081:8081"
+    volumes:
+      - ./joke_vol_fe:/fe-app/joke_vol
   be-con:
     image: be-dr-img:v1
     ports:
       - "8080:8080"
     environment:
       user_name: CodingBeast_Docker_compose
+    volumes:
+      - ./joke_vol_be:/be-app/joke_vol
+      - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/be-app
+
+

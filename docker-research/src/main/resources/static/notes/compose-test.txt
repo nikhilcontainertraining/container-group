@@ -26,3 +26,13 @@ docker run --rm \
             -v "/Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/fe-app" \
             -p 8081:8081 \
             --name container-group-fe-con-1 fe-dr-img:v1
+
+--------------
+IMPORTANT NOTE
+--------------
+
+- If volumes are created via docker compose then
+- declare each the volume under "volumes" section
+- named volumes need to have relative path hence "./" prefix is required
+- bind mount already has absolute path hence relative path is not required
+
