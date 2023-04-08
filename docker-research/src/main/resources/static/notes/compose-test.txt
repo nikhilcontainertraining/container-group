@@ -36,3 +36,13 @@ IMPORTANT NOTE
 - named volumes need to have relative path hence "./" prefix is required
 - bind mount already has absolute path hence relative path is not required
 
+- backup dir
+    - since our api is copying the joke/message file into backup dir from "joke_vol" ==> "joke_vol_be"(named vol)
+    - and "backup" directory is directly referred to load the file it is necessary to be created manually in BIND mount location
+    - HENCE "backup" dir @ ""/Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data/backup" needs to be created
+
+- Dir/Folders that are automatically created
+    - logs - created by log4j
+    - lib - created by docker based on anonymous volume definition in application "DockerFile"
+    - joke_vol - created by docker based on named volume definition in "docker-compose"
+

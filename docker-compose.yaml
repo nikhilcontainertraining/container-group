@@ -10,7 +10,7 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - ./joke_vol_fe:/fe-app/joke_vol
+      - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/fe-app
   be-con:
     image: be-dr-img:v1
     ports:
