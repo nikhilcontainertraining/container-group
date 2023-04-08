@@ -1,0 +1,28 @@
+docker run -it \
+           --network container-group_default \
+           --name container-group-mysql-con-1 \
+           -e MYSQL_ROOT_PASSWORD=Mig5@mig5 \
+           -u root \
+           -d \
+           mysql
+
+---
+
+gradle clean build && docker build -t be-dr-img:v1 .
+docker run --rm  \
+            --network container-group_default  \
+            -v joke_vol_be:/be-app/joke_vol  \
+            -v "/Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/be-app"  \
+            -p 8080:8080  \
+            --name container-group-be-con-1 be-dr-img:v1
+
+
+---
+
+gradle clean build && docker build -t fe-dr-img:v1 .
+docker run --rm \
+            --network container-group_default \
+            -v joke_vol_fe:/fe-app/joke_vol \
+            -v "/Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/fe-app" \
+            -p 8081:8081 \
+            --name container-group-fe-con-1 fe-dr-img:v1

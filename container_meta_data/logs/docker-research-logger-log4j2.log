@@ -1,0 +1,10 @@
+2023-04-08 04:08:58,707 DEBUG o.h.e.j.s.SqlStatementLogger [http-nio-8080-exec-1] insert into card (expiration, owner, type, number) values (?, ?, ?, ?)
+2023-04-08 04:08:58,725 INFO c.n.c.d.s.CardsHandler [http-nio-8080-exec-1] Request to getMovies from internet COMPLETE
+2023-04-08 04:09:28,702 INFO c.n.c.d.s.FileHandler [http-nio-8080-exec-7] ------------------------------------------------------------
+2023-04-08 04:09:28,705 INFO c.n.c.d.s.FileHandler [http-nio-8080-exec-7] -- file rel path -- joke_vol/nZOorN3n75gnNztQyrOf.json
+2023-04-08 04:09:28,706 INFO c.n.c.d.s.FileHandler [http-nio-8080-exec-7] -- file abs path -- /be-app/joke_vol/nZOorN3n75gnNztQyrOf.json
+2023-04-08 04:09:28,719 INFO c.n.c.d.s.FileHandler [http-nio-8080-exec-7] filename: nZOorN3n75gnNztQyrOf.json
+2023-04-08 04:09:28,721 INFO c.n.c.d.a.FirstRestApi [http-nio-8080-exec-7] CodingBeast_Build_Args message log: nZOorN3n75gnNztQyrOf
+2023-04-08 04:10:03,887 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-08 04:10:03,891 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-08 04:10:03,898 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

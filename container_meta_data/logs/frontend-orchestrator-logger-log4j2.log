@@ -1,0 +1,16 @@
+2023-04-08 04:07:29,105 INFO o.s.b.StartupInfoLogger [main] Starting FrontendOrchestratorApplication using Java 17.0.6 on b41bce0bd107 with PID 1 (/fe-app/lib/frontend-orchestrator-0.0.1-SNAPSHOT.jar started by root in /fe-app)
+2023-04-08 04:07:29,114 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-08 04:07:30,547 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2023-04-08 04:07:30,571 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2023-04-08 04:07:30,575 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-04-08 04:07:30,577 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-04-08 04:07:30,674 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-04-08 04:07:30,677 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1516 ms
+2023-04-08 04:07:31,228 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2023-04-08 04:07:31,261 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2023-04-08 04:07:31,274 INFO o.s.b.StartupInfoLogger [main] Started FrontendOrchestratorApplication in 2.825 seconds (JVM running for 3.667)
+2023-04-08 04:08:57,433 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-08 04:08:57,435 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-08 04:08:57,437 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 0 ms
+2023-04-08 04:08:57,461 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-1] Request to get cards from downstream/backend STARTED
+2023-04-08 04:08:58,772 INFO c.n.c.f.s.CardsHandler [http-nio-8081-exec-1] Request to get cards from downstream/backend COMPLETE

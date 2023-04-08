@@ -1,12 +1,12 @@
 FROM gradle
 
-WORKDIR /app
+WORKDIR /fe-app
 
-COPY /build/libs/frontend-orchestrator-0.0.1-SNAPSHOT.jar /app/lib/frontend-orchestrator-0.0.1-SNAPSHOT.jar
+COPY /build/libs/frontend-orchestrator-0.0.1-SNAPSHOT.jar /fe-app/lib/frontend-orchestrator-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8081
 
-VOLUME [ "/app/lib" ]
+VOLUME [ "/fe-app/lib" ]
 
-CMD ["java", "-jar", "/app/lib/frontend-orchestrator-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "/fe-app/lib/frontend-orchestrator-0.0.1-SNAPSHOT.jar"]
 

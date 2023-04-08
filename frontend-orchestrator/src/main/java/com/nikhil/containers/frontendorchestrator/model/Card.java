@@ -2,15 +2,15 @@ package com.nikhil.containers.frontendorchestrator.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
 import java.util.Objects;
 
-@Entity
+//@Entity
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Card {
 
-    @Id
+//    @Id
     private String number;
     private String type;
     private String expiration;

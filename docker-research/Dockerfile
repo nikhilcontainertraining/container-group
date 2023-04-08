@@ -1,8 +1,8 @@
 FROM gradle
 
-WORKDIR /app
+WORKDIR /be-app
 
-COPY /build/libs/docker-research-0.0.1-SNAPSHOT.jar /app/lib/docker-research-0.0.1-SNAPSHOT.jar
+COPY /build/libs/docker-research-0.0.1-SNAPSHOT.jar /be-app/lib/docker-research-0.0.1-SNAPSHOT.jar
 #COPY . .
 
 #RUN gradle clean build
@@ -11,10 +11,10 @@ COPY /build/libs/docker-research-0.0.1-SNAPSHOT.jar /app/lib/docker-research-0.0
 
 #VOLUME [ "/app/joke_vol" ] - annonymous volumes
 
-VOLUME [ "/app/lib" ]
+VOLUME [ "/be-app/lib" ]
 
 ARG SERVER_NAME=CodingBeast_Build_Args
 ENV user_name $SERVER_NAME
 
 #CMD ["gradle", "bootRun"]
-CMD ["java", "-jar", "/app/lib/docker-research-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "/be-app/lib/docker-research-0.0.1-SNAPSHOT.jar"]
