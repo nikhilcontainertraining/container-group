@@ -1,3 +1,104 @@
+---
+COMPOSE
+---
+- we can build an image using docker compose -
+    services:
+        be-con:
+            build: ./docker-research
+
+- set context - context root path
+    build:
+        context: ./docker-research
+
+- source of Dockerfile
+    build:
+        context: ./docker-research
+        dockerfile: Dockerfile
+
+- we can pass build ARGS in docker compose file
+    build:
+        context: ./docker-research
+        dockerfile: Dockerfile
+        args:
+            SERVER_NAME: CodingBeast_Build_Args
+
+- define ports - ingress and egress
+    version: "3.9" #refer to docker hub page for current/appropriate stable version
+    services:
+        be-con:
+            ports:
+                - "8080:8080"
+
+- define networks or let docker create default network
+    services:
+        be-con:
+            # if pre-created
+            network_mode: container-group_default
+
+            # create new network
+            networks:
+                container-group_default
+
+- * if defaulted - all services in the compose file are on same default network
+
+- define volumes - anonymous, named volumes and bind mounts
+    volumes:
+        joke_vol_be:
+    services:
+        be-con:
+            volumes:
+                #anonymous volume
+                - /be-app/lib
+
+                #named volume - needs declaration an first level too
+                - joke_vol_be:/be-app/joke_vol
+
+                #bind mounts absolute path
+                - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/be-app:rw
+
+                #bind mounts relative path ( relative to work_dir )
+                - ./container-group/container_meta_data:/be-app:rw
+
+- named volumes needs to double defined at first level hierarchy
+- bind mounts can be defined by relative path or absolute path - "./path:/be-con/joke_vol"
+- bind mounts need not be defined in first level volumes
+
+- set env variables individually before image is built.
+    build:
+        context: ./docker-research
+        dockerfile: Dockerfile
+        args:
+            SERVER_NAME: CodingBeast_Build_Args
+        environment:
+            user_name: $SERVER_NAME
+
+- set env file to pick environment variables from file at service level - "env_file"
+    build:
+        context: ./docker-research
+        dockerfile: Dockerfile
+        args:
+            SERVER_NAME: CodingBeast_Build_Args
+        env_file:
+            - ./container-group/docker-research/src/main/resources/application_properties.env
+            - ./container-group/common_properties.env
+
+
+- *** service interdependency can be defined in docker compose - "depends_on"
+     volumes:
+         joke_vol_be:
+     services:
+         be-con:
+            depends_on:
+                - mysql
+         fe-con:
+            depends_on:
+                - mysql
+                - be-con
+
+---------------------------------------------------------
+Commands used to build compose file reference for compose
+---------------------------------------------------------
+
 docker run -it \
            --network container-group_default \
            --name container-group-mysql-con-1 \
@@ -26,6 +127,23 @@ docker run --rm \
             -v "/Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/fe-app" \
             -p 8081:8081 \
             --name container-group-fe-con-1 fe-dr-img:v1
+
+
+--------------------------------------------------------
+COMMANDS
+--------------------------------------------------------
+ - compose command
+    "docker compose" is same as "docker-compose"
+
+ - to just build docker image from compose definition
+    docker-compose build
+
+- to build docker image and spin up container as per compose definition
+    docker-compose up
+    - subsequent "docker-compose up" will use existing pre-build local image
+
+- to force build/rebuild docker image before spinning up containers
+    docker-compose up --build
 
 --------------------------------------------------------
 
@@ -65,4 +183,36 @@ IMPORTANT NOTE
 
     - container_group/joke_vol_fe   - bind mounts - created by docker - if ("./joke_vol_fe:/fe-app/joke_vol")
 
---------------------------------------------------------
+-----------------
+MYSQL
+-----------------
+- to database repository created in mysql before "be-con" is up, we need following configuration
+
+services:
+  mysql-con:
+    image: mysql
+    stdin_open: true
+    tty: true
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: Mig5@mig5
+      MYSQL_DATABASE: card_repository
+
+----- 
+- since spinning up container mysql container and creating database take time
+- often the be-con fails at start up and DB connection is broken on startup
+- Hence "restart" on conditional clause for "be-con" is helpful
+
+   be-con:
+     depends_on:
+       - mysql-con
+     restart: on-failure
+
+- Hence be-con attempts to restart continuously until it successfully boots up
+
+-----
+
+
+
+
+-----------------

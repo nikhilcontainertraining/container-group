@@ -24,7 +24,7 @@ public class CardsHandler {
 
         ResponseEntity<List> getCardsResponse = null;
         try {
-            getCardsResponse = restTemplate.getForEntity("http://container-group-be-con-1:8080/cards", List.class);
+            getCardsResponse = restTemplate.getForEntity("http://be-con:8080/cards", List.class);
         } catch (Exception e) {
             log.error("ERROR Occurred : Request to get cards from downstream/backend: " + e.getMessage());
             log.error(e.getStackTrace());

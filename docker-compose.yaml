@@ -1,51 +1,73 @@
 version: "3.9"
 services:
   mysql-con:
+    container_name: mysql-con
     image: mysql
+    stdin_open: true
+    tty: true
     environment:
+      MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: Mig5@mig5
-    user: root
+      MYSQL_DATABASE: card_repository
 
-    # if network is predefined
+#   if network is predefined
 #    network_mode: container-group_default
 #
 #    networks:
 #      container-group_default:
+
+  be-con:
+    container_name: be-con
+    build:
+      context: ./docker-research
+      dockerfile: Dockerfile
+      args:
+        SERVER_NAME: CodingBeast_Build_Args_from_Compose_file
+    working_dir: /be-app
+    image: be-dr-img:v1
+    ports:
+      - "8080:8080"
+    environment:
+      user_name: $SERVER_NAME
+    volumes:
+      - joke_vol_be:/be-app/joke_vol
+      - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/be-app:rw
+    depends_on:
+      - mysql-con
+    restart: on-failure
+
+
+
+#   if network is predefined
+#      network_mode: container-group_default
+#
+#      networks:
+#        container-group_default:
 
   fe-con:
+    container_name: fe-con
+    build:
+      context: ./frontend-orchestrator
+      dockerfile: Dockerfile
     working_dir: /fe-app
     image: fe-dr-img:v1
-
-    # if network is predefined
-#    network_mode: container-group_default
-#
-#    networks:
-#      container-group_default:
-
     ports:
       - "8081:8081"
     volumes:
       - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/fe-app:rw
-  be-con:
-    working_dir: /be-app
-    image: be-dr-img:v1
+    depends_on:
+      - be-con
 
-    # if network is predefined
-#    network_mode: container-group_default
+#   if network is predefined
+#        network_mode: container-group_default
 #
-#    networks:
-#      container-group_default:
+#        networks:
+#          container-group_default:
 
-    ports:
-      - "8080:8080"
-    environment:
-      user_name: CodingBeast_Docker_compose
-    volumes:
-      - joke_vol_be:/be-app/joke_vol
-      - /Users/nikhilhiremath/Documents/Engineering/CKAD/Docker/apps/workspace/container-group/container_meta_data:/be-app:rw
 
 # named volumes
 # with this a NEW possibility is that the named volumes could be shared by multiple containers
 # other properties remain same -
 volumes:
   joke_vol_be:
+  db_data:

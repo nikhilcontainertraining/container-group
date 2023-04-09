@@ -27,7 +27,7 @@ public class CardsHandler {
     private CardRepository cardRepository;
 
     public List<Card> getCards() {
-        log.info("Request to getCards from backend STARTED");
+        log.info("Request to getCards STARTED");
 
         Map<String, String> uriVariables = new HashMap<>();
         uriVariables.put("_quantity", "5");
@@ -47,7 +47,7 @@ public class CardsHandler {
 
         cards.forEach(card -> cardRepository.save(card));
 
-        log.info("Request to getCards from backend COMPLETE");
+        log.info("Request to getCards COMPLETE");
 
         return cards;
     }
