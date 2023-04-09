@@ -70,4 +70,3 @@ services:
 # other properties remain same -
 volumes:
   joke_vol_be:
-  db_data:

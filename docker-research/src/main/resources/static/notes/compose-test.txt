@@ -198,7 +198,7 @@ services:
       MYSQL_ROOT_PASSWORD: Mig5@mig5
       MYSQL_DATABASE: card_repository
 
------ 
+-----
 - since spinning up container mysql container and creating database take time
 - often the be-con fails at start up and DB connection is broken on startup
 - Hence "restart" on conditional clause for "be-con" is helpful
